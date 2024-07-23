@@ -6,6 +6,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 
+///word api that can be used
+///https://random-word-api.herokuapp.com/home
+///https://www.datamuse.com/api/
+
 public class Dictionary {
 	private final String wordUri = "https://random-word-api.herokuapp.com/word";
 	
