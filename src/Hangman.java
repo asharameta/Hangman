@@ -20,15 +20,13 @@ public class Hangman {
 		dic = new Dictionary();
 	}
 	
-	
-	
 	private String drawWord() {
 		String wordToGuess = dic.getSyncRandomWord();
 		return wordToGuess.substring(2, wordToGuess.length()-2);
 	}
 	
 	private String compareWords(String word, String targetWord){
-		if (word == null || word.isEmpty()) {
+		if (word == null || word.isBlank()) {
 	        return "Input cannot be empty. Please try again.";
 	    }
 	    if (targetWord.length() != word.length()) {
