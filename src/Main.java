@@ -8,22 +8,22 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Hangman hM = new Hangman();
-		System.out.println("Hello world again!" + hM.getTheWord());
+		System.out.println("Hello world again!   " + hM.getTheWord());
 		
 		System.out.println("The word has " + hM.getWordLength() + " letters");
 		try (Scanner scanner = new Scanner(System.in)) {
 			while(usedAttempts<ATTEMPTS) {
 				System.out.println(usedAttempts+ "/"+ ATTEMPTS);
 				System.out.print("word: ");
-				if(hM.CheckTheWord(scanner.nextLine())) {
+				String providedWord = scanner.nextLine();
+				System.out.println(hM.CheckTheWord(providedWord));
+				if(hM.getTheWord().equalsIgnoreCase(providedWord)) {
 					System.out.println("U won! Congratz.");
-					scanner.close();
 					return;
 				}
 				usedAttempts++;
 				if(usedAttempts == ATTEMPTS) {
 					System.out.println("U lost! Try again.");
-					scanner.close();
 					return;
 				}
 			}
